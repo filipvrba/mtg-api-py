@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG API - Index</title>
+  </head>
+  <body>
+    <h1>MTG API - Index</h1>
+    <p>You can get all the details about the tables this api may access here.</p>
+
+    <h2>=== TABLES ===</h2>
+    <ul>
+      <li>
+        <p>cards</p>
+      </li>
+      <li>
+        <p>legalities</p>
+      </li>
+      <li>
+        <p>rulings</p>
+      </li>
+      <li>
+        <p>sets</p>
+      </li>
+      <li>
+        <p>foreign_data</p>
+      </li>
+      <li>
+        <p>meta</p>
+      </li>
+      <li>
+        <p>set_translations</p>
+      </li>
+      <li>
+        <p>tokens</p>
+      </li>
+    </ul>
+    
+<h2>=== SHEMA ===</h2>
+    <p>
+CREATE TABLE `sets` (<br>
+    id INTEGER PRIMARY KEY AUTOINCREMENT,<br>
+    baseSetSize INTEGER,<br>
+    block TEXT,<br>
+    booster TEXT,<br>
+    cardsphereSetId INTEGER,<br>
+    code TEXT(8) UNIQUE NOT NULL,<br>
+    isFoilOnly INTEGER NOT NULL DEFAULT 0,<br>
+    isForeignOnly INTEGER NOT NULL DEFAULT 0,<br>
+    isNonFoilOnly INTEGER NOT NULL DEFAULT 0,<br>
+    isOnlineOnly INTEGER NOT NULL DEFAULT 0,<br>
+    isPartialPreview INTEGER NOT NULL DEFAULT 0,<br>
+    keyruneCode TEXT,<br>
+    languages TEXT,<br>
+    mcmId INTEGER,<br>
+    mcmIdExtras INTEGER,<br>
+    mcmName TEXT,<br>
+    mtgoCode TEXT,<br>
+    name TEXT,<br>
+    parentCode TEXT,<br>
+    releaseDate DATE,<br>
+    sealedProduct TEXT,<br>
+    tcgplayerGroupId INTEGER,<br>
+    tokenSetCode TEXT,<br>
+    totalSetSize INTEGER,<br>
+    type TEXT<br>
+);<br><br>
+CREATE TABLE sqlite_sequence(name,seq);<br><br>
+CREATE TABLE `cards` (<br>
+    id INTEGER PRIMARY KEY AUTOINCREMENT,<br>
+    artist TEXT,<br>
+    asciiName TEXT,<br>
+    attractionLights TEXT,<br>
+    availability TEXT,<br>
+    boosterTypes TEXT,<br>
+    borderColor TEXT,<br>
+    cardKingdomEtchedId TEXT,<br>
+    cardKingdomFoilId TEXT,<br>
+    cardKingdomId TEXT,<br>
+    cardParts TEXT,<br>
+    cardsphereId TEXT,<br>
+    colorIdentity TEXT,<br>
+    colorIndicator TEXT,<br>
+    colors TEXT,<br>
+    convertedManaCost FLOAT,<br>
+    duelDeck TEXT,<br>
+    edhrecRank INTEGER,<br>
+    faceConvertedManaCost FLOAT,<br>
+    faceFlavorName TEXT,<br>
+    faceManaValue FLOAT,<br>
+    faceName TEXT,<br>
+    finishes TEXT,<br>
+    flavorName TEXT,<br>
+    flavorText TEXT,<br>
+    frameEffects TEXT,<br>
+    frameVersion TEXT,<br>
+    hand TEXT,<br>
+    hasAlternativeDeckLimit INTEGER NOT NULL DEFAULT 0,<br>
+    hasContentWarning INTEGER NOT NULL DEFAULT 0,<br>
+    hasFoil INTEGER NOT NULL DEFAULT 0,<br>
+    hasNonFoil INTEGER NOT NULL DEFAULT 0,<br>
+    isAlternative INTEGER NOT NULL DEFAULT 0,<br>
+    isFullArt INTEGER NOT NULL DEFAULT 0,<br>
+    isFunny INTEGER NOT NULL DEFAULT 0,<br>
+    isOnlineOnly INTEGER NOT NULL DEFAULT 0,<br>
+    isOversized INTEGER NOT NULL DEFAULT 0,<br>
+    isPromo INTEGER NOT NULL DEFAULT 0,<br>
+    isRebalanced INTEGER NOT NULL DEFAULT 0,<br>
+    isReprint INTEGER NOT NULL DEFAULT 0,<br>
+    isReserved INTEGER NOT NULL DEFAULT 0,<br>
+    isStarter INTEGER NOT NULL DEFAULT 0,<br>
+    isStorySpotlight INTEGER NOT NULL DEFAULT 0,<br>
+    isTextless INTEGER NOT NULL DEFAULT 0,<br>
+    isTimeshifted INTEGER NOT NULL DEFAULT 0,<br>
+    keywords TEXT,<br>
+    language TEXT,<br>
+    layout TEXT,<br>
+    leadershipSkills TEXT,<br>
+    life TEXT,<br>
+    loyalty TEXT,<br>
+    manaCost TEXT,<br>
+    manaValue FLOAT,<br>
+    mcmId TEXT,<br>
+    mcmMetaId TEXT,<br>
+    mtgArenaId TEXT,<br>
+    mtgjsonFoilVersionId TEXT,<br>
+    mtgjsonNonFoilVersionId TEXT,<br>
+    mtgjsonV4Id TEXT,<br>
+    mtgoFoilId TEXT,<br>
+    mtgoId TEXT,<br>
+    multiverseId TEXT,<br>
+    name TEXT,<br>
+    number TEXT,<br>
+    originalPrintings TEXT,<br>
+    originalReleaseDate TEXT,<br>
+    originalText TEXT,<br>
+    originalType TEXT,<br>
+    otherFaceIds TEXT,<br>
+    power TEXT,<br>
+    printings TEXT,<br>
+    promoTypes TEXT,<br>
+    purchaseUrls TEXT,<br>
+    rarity TEXT,<br>
+    rebalancedPrintings TEXT,<br>
+    relatedCards TEXT,<br>
+    scryfallId TEXT,<br>
+    scryfallIllustrationId TEXT,<br>
+    scryfallOracleId TEXT,<br>
+    securityStamp TEXT,<br>
+    setCode TEXT,<br>
+    side TEXT,<br>
+    signature TEXT,<br>
+    subset TEXT,<br>
+    subtypes TEXT,<br>
+    supertypes TEXT,<br>
+    tcgplayerEtchedProductId TEXT,<br>
+    tcgplayerProductId TEXT,<br>
+    text TEXT,<br>
+    toughness TEXT,<br>
+    type TEXT,<br>
+    types TEXT,<br>
+    uuid TEXT(36) UNIQUE NOT NULL,<br>
+    variations TEXT,<br>
+    watermark TEXT<br>
+);<br><br>
+CREATE TABLE `tokens` (<br>
+    id INTEGER PRIMARY KEY AUTOINCREMENT,<br>
+    artist TEXT,<br>
+    asciiName TEXT,<br>
+    availability TEXT,<br>
+    boosterTypes TEXT,<br>
+    borderColor TEXT,<br>
+    colorIdentity TEXT,<br>
+    colors TEXT,<br>
+    faceName TEXT,<br>
+    finishes TEXT,<br>
+    flavorText TEXT,<br>
+    frameEffects TEXT,<br>
+    frameVersion TEXT,<br>
+    hasFoil INTEGER NOT NULL DEFAULT 0,<br>
+    hasNonFoil INTEGER NOT NULL DEFAULT 0,<br>
+    isFullArt INTEGER NOT NULL DEFAULT 0,<br>
+    isFunny INTEGER NOT NULL DEFAULT 0,<br>
+    isPromo INTEGER NOT NULL DEFAULT 0,<br>
+    isReprint INTEGER NOT NULL DEFAULT 0,<br>
+    isTextless INTEGER NOT NULL DEFAULT 0,<br>
+    keywords TEXT,<br>
+    language TEXT,<br>
+    layout TEXT,<br>
+    mcmId TEXT,<br>
+    mtgArenaId TEXT,<br>
+    mtgjsonV4Id TEXT,<br>
+    multiverseId TEXT,<br>
+    name TEXT,<br>
+    number TEXT,<br>
+    originalText TEXT,<br>
+    originalType TEXT,<br>
+    otherFaceIds TEXT,<br>
+    power TEXT,<br>
+    promoTypes TEXT,<br>
+    relatedCards TEXT,<br>
+    reverseRelated TEXT,<br>
+    scryfallId TEXT,<br>
+    scryfallIllustrationId TEXT,<br>
+    scryfallOracleId TEXT,<br>
+    securityStamp TEXT,<br>
+    setCode TEXT,<br>
+    side TEXT,<br>
+    signature TEXT,<br>
+    subtypes TEXT,<br>
+    supertypes TEXT,<br>
+    tcgplayerProductId TEXT,<br>
+    text TEXT,<br>
+    toughness TEXT,<br>
+    type TEXT,<br>
+    types TEXT,<br>
+    uuid TEXT(36) NOT NULL,<br>
+    watermark TEXT<br>
+);<br><br>
+CREATE TABLE `rulings` (<br>
+    id INTEGER PRIMARY KEY AUTOINCREMENT,<br>
+    date DATE,<br>
+    text TEXT,<br>
+    uuid TEXT(36) REFERENCES cards(uuid) ON UPDATE CASCADE ON DELETE CASCADE<br>
+);<br><br>
+CREATE TABLE `legalities` (<br>
+    id INTEGER PRIMARY KEY AUTOINCREMENT,<br>
+    format TEXT,<br>
+    status TEXT,<br>
+    uuid TEXT(36) REFERENCES cards(uuid) ON UPDATE CASCADE ON DELETE CASCADE<br>
+);<br><br>
+CREATE TABLE `foreign_data` (<br>
+    id INTEGER PRIMARY KEY AUTOINCREMENT,<br>
+    flavorText TEXT,<br>
+    language TEXT,<br>
+    multiverseid INTEGER,<br>
+    name TEXT,<br>
+    text TEXT,<br>
+    type TEXT,<br>
+    uuid TEXT(36) REFERENCES cards(uuid) ON UPDATE CASCADE ON DELETE CASCADE<br>
+);<br><br>
+CREATE TABLE `set_translations` (<br>
+    id INTEGER PRIMARY KEY AUTOINCREMENT,<br>
+    language TEXT,<br>
+    setCode TEXT(8) REFERENCES sets(code) ON UPDATE CASCADE ON DELETE CASCADE,<br>
+    translation TEXT<br>
+);<br><br>
+CREATE TABLE `meta` (<br>
+    id INTEGER PRIMARY KEY AUTOINCREMENT,<br>
+    date DATE,<br>
+    version TEXT<br>
+);
+    </p>
+  </body>
+</html>
