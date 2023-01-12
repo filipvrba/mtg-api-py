@@ -11,9 +11,15 @@ def get_content(execute):
     connection = sqlite3.connect("all_printings.sqlite")
     connection.row_factory = dict_factory
 
-    cursor = connection.cursor()
+    try:
+        cursor = connection.cursor()
+        result = cursor.execute(execute)
+        content = result.fetchall()
+    except Exception as e:
+        content = {
+            "code": "Error",
+            "message": e.__str__()
+        }
 
-    result = cursor.execute(execute)
-    content = result.fetchall()
     connection.close()
     return content
