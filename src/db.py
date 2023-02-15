@@ -1,9 +1,13 @@
 import sqlite3
+import ast
 
 
 def dict_factory(cursor, row):
     fields = [column[0] for column in cursor.description]
-    return {key: value for key, value in zip(fields, row)}
+
+    dict = {key: value for key, value in zip(fields, row)}
+    dict['purchaseUrls'] = ast.literal_eval(dict['purchaseUrls'])
+    return dict
 
 
 def get_content(execute):
