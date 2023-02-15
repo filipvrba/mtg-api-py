@@ -6,7 +6,10 @@ def dict_factory(cursor, row):
     fields = [column[0] for column in cursor.description]
 
     dict = {key: value for key, value in zip(fields, row)}
-    dict['purchaseUrls'] = ast.literal_eval(dict['purchaseUrls'])
+    pur_urls = 'purchaseUrls'
+    if pur_urls in dict:
+        dict[pur_urls] = ast.literal_eval(dict[pur_urls])
+
     return dict
 
 
