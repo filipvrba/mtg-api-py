@@ -7,7 +7,7 @@ def dict_factory(cursor, row):
 
     dict = {key: value for key, value in zip(fields, row)}
     pur_urls = 'purchaseUrls'
-    if pur_urls in dict:
+    if pur_urls in dict and dict[pur_urls] != None:
         dict[pur_urls] = ast.literal_eval(dict[pur_urls])
 
     return dict
